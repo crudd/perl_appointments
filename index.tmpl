@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Appointments</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="style.css"></style>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="appointments.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div id="errorDiv"><tmpl_var name=errors></div>
+            <div><button id="newButton">NEW</button>
+            <form id="addForm" name="addForm" method="post" action="">
+            <fieldset>
+                <p><button id="addButton">ADD</button> <button id="cancelButton">CANCEL</button></p>
+                <p>
+                    <label for="date">DATE</label>
+                    <input type="text" id="date" name="date" size="20" required>
+                </p>
+                <p>
+                    <label for="time">TIME</label>
+                    <input type="text" id="time" name="time" size="20" required>
+                </p>
+                <p>
+                    <label for="description">DESC</label>
+                    <input type="text" id="desc" name="desc" size="20" required>
+                </p>
+            </fieldset>
+            </form>
+            </div>
+            <div><input type="text" id="searchBox"> <button id="searchButton" class="btn">SEARCH</button></div>
+            <div id="appointments" class="col-md-6">
+                <table class="table table-bordered" id="appts">
+                    <thead><tr><th>DATE</th><th>TIME</th><th>DESCRIPTION</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
