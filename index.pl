@@ -16,7 +16,10 @@ my $myPassword = getPassword();
 
 my $dbh = DBI->connect("DBI:mysql:database=$db:host=$host", $user, $myPassword) or die $DBI::errstr;
 $dbh->{RaiseError} = 1;
-
+my $ct = $dbh->do("CREATE TABLE IF NOT EXISTS `appointments` (
+  `apptTime` datetime NOT NULL,
+  `apptDesc` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;");
 my $q = CGI->new;
 main();
 
